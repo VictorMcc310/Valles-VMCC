@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">VallesVMCC</string>
+    <string name="steps">Número de pasos</string>
+    <string name="path">Secuencia</string>
+    <string name="valley">Número Valles:</string>
+    <string name="calcular">calcular</string>
+    <string name="up">U</string>
+    <string name="dowm">D</string>
+</resources>
