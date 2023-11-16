@@ -116,12 +116,21 @@
 
     <Button
         android:id="@+id/buttonReloj"
+        android:layout_marginTop="15sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Relojs de arena" />
 
     <TextView
+        android:id="@+id/textView5"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/matriz" />
+
+    <TextView
         android:id="@+id/textViewRR"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="25sp"
