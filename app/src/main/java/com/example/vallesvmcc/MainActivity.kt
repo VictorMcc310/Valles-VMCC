@@ -88,5 +88,66 @@ class MainActivity : AppCompatActivity() {
         return nValles
 
     }
+    fun relojs (): Int{
+        val matriz = arrayOf(
+            intArrayOf(-9,-9,-9, 1, 1, 1),
+            intArrayOf( 0,-9, 0, 4, 3, 2),
+            intArrayOf(-9,-9,-9, 1, 2, 3),
+            intArrayOf( 0, 0, 8, 6, 6, 0),
+            intArrayOf( 0, 0, 0,-2, 0, 0),
+            intArrayOf( 0, 0, 1, 2, 4, 0),
+            )
+        /***
+         * En la matriz un reloj se representa por :
+
+         a b c
+           d
+         e f g
+
+         traducido a indices de una matriz seria
+
+         m[i][j]  m[i][j+1]  m[i][j+2]
+                  m[i][j+1]
+        m[i+2][j] m[i+2][j+1] m[i+2][j+2]
+
+        Así se recorreria la matriz haciendo un recorrido
+        lineal lo cual quiere decir que deberia haber un salto en el indice de i,
+         este salto se dara cuando el indice j en su valor pase 5,
+        lo cual indica que debemos considerar j+2 para no salir de los indices
+        y para calcular el ultimo salto en el indice i que se puede realizar nos guiaremos de i+2
+         */
+        var mayor=-63
+        /** como se busca el número mayor tomamos el menor para comparar
+         como en este caso se pueden número s negativos el menor no puede ser 0
+         el numero menos es negativo de la suma de 7 numeros negativos -9*/
+
+        for (i in matriz.indices) {
+            if(i+2>5)break  // si ya no hay relojs
+            for (j in 0 until matriz[i].size) {
+                if(j+2>5)break // para hacer un salto de indice y buscar mas relojs
+                val a = matriz[i][j]
+                val b = matriz[i][j+1]
+                val c = matriz[i][j+2]
+                val d = matriz[i+1][j+1]
+                val e = matriz[i+2][j]
+                val f = matriz[i+2][j+1]
+                val g = matriz[i+2][j+2]
+
+                val sumaReloj = a+b+c+d+e+f+g
+
+                if(sumaReloj>mayor){
+                    mayor=sumaReloj
+                }
+
+            }
+        }
+        return mayor
+    }
+
+
+
+
+
+
 
 }
