@@ -18,6 +18,9 @@ class MainActivity : AppCompatActivity() {
     lateinit var buttonClean: Button
     lateinit var textViewNV : TextView
 
+    lateinit var buttonReloj: Button
+    lateinit var textViewRR : TextView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +36,9 @@ class MainActivity : AppCompatActivity() {
         buttonD = findViewById(R.id.buttonD)
         buttonClean = findViewById(R.id.buttonClean)
 
+        buttonReloj = findViewById(R.id.buttonReloj)
+        textViewRR = findViewById(R.id.textViewRR)
+
         buttonD.setOnClickListener {
             val d= pathV.text.toString()+"D"
             pathV.setText(d)
@@ -47,6 +53,8 @@ class MainActivity : AppCompatActivity() {
             pathV.setText("")
             stepsV.setText("")
         }
+
+        buttonReloj.setOnClickListener { textViewRR.text = "Suma mayor "+relojs() }
 
 
 
